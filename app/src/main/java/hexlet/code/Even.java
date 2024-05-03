@@ -21,17 +21,8 @@ public class Even {
             if ((isEven && answer.equals("yes")) || (!isEven) && answer.equals("no")) {
                 System.out.println("Correct!");
                 winCounter++;
-            } else if (answer.equals("no")) {
-                System.out.println(answer + " is the wrong answer ;(. Correct answer was \"yes\".");
-                System.out.println("Let's try again, " + playerName + "!");
-                lose = true;
-            } else if (answer.equals("yes")){
-                System.out.println(answer + " is the wrong answer ;(. Correct answer was \"no\".");
-                System.out.println("Let's try again, " + playerName + "!");
-                lose = true;
             } else {
-                System.out.println("Incorrect input. Correct answer was " + (isEven ? "yes" : "no"));
-                System.out.println("Let's try again, " + playerName + "!");
+                System.out.println(answer + "is wrong answer ;(. Correct answer was " + (isEven ? "yes" : "no"));
                 lose = true;
             }
         }
