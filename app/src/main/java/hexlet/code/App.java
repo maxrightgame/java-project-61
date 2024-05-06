@@ -1,33 +1,40 @@
 package hexlet.code;
 
-import java.util.Scanner;
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
 
-import static hexlet.code.Even.evenGame;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Please enter the action number to start.");
-        System.out.println("1 - Greeting");
-        System.out.println("2 - Even numbers");
-        System.out.println("0 - Exit");
+        displayMenu();
         Scanner gameScanner = new Scanner(System.in);
         int choice = Integer.parseInt(gameScanner.next());
         switch (choice) {
             case (0):
                 break;
             case (1):
-                System.out.println("Welcome to the Brain Games!\nWhat do I call you?");
-                Scanner nameScanner = new Scanner(System.in);
-                String playerName = nameScanner.next();
-                System.out.println("Hello, " + playerName + "!");
+                Engine.Greeting(Engine.nameReader());
                 break;
             case (2):
-                evenGame();
+                Engine.Greeting(Engine.nameReader());
+                Even.evenGame();
+                break;
+            case (3):
+                Engine.Greeting(Engine.nameReader());
+                Calculator.calculatorGame();
                 break;
             default:
                 System.out.println("Incorrect input!");
                 break;
         }
-        gameScanner.close();
+    }
+
+    public static void displayMenu() {
+        System.out.println("Please enter the action number to start.");
+        System.out.println("1 - Greeting");
+        System.out.println("2 - Even numbers");
+        System.out.println("3 - Calc");
+        System.out.println("0 - Exit");
     }
 }
