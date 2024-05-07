@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static final int TOTAL_GAMES = 3;
     public static final int EVENGAME_MAX_NUMBER = 100;
-    public static final int CALCULATORGAME_MAX_NUMBER = 100;
+    public static final int CALCULATORGAME_MAX_NUMBER = 15;
     public static boolean lose = false;
     public static int winCounter = 0;
     public static String playerName;
@@ -31,7 +31,8 @@ public class Engine {
     }
 
     public static void incorrectAnswerAction(String answer) {
-        System.out.print(answer + " is wrong answer ;(. Correct answer was "); //TODO нужно закрыть сканер после поражения
+        System.out.print(answer + " is wrong answer ;(. Correct answer was " + answer);
+        //TODO нужно закрыть сканер после поражения
         lose = true;
     }
 
