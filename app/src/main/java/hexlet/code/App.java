@@ -14,14 +14,14 @@ public class App {
             case (0):
                 break;
             case (1):
-                Engine.Greeting(Engine.nameReader());
+                Engine.greeting(Engine.nameReader());
                 break;
             case (2):
-                Engine.Greeting(Engine.nameReader());
+                Engine.greeting(Engine.nameReader());
                 Even.evenGame();
                 break;
             case (3):
-                Engine.Greeting(Engine.nameReader());
+                Engine.greeting(Engine.nameReader());
                 Calculator.calculatorGame();
                 break;
             default:

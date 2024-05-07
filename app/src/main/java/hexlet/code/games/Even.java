@@ -6,23 +6,28 @@ public class Even {
     public static void evenGame() {
         System.out.println("Answer \"yes\" if the number is even, otherwise answer \"no\".");
         while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
-            int nextNumber = Engine.evenGameGenerateRandomNumber();
-            System.out.println("Question: " + nextNumber);
+            int questionNumber = Engine.evenGameGenerateRandomNumber();
+            Engine.evenGamePrintQuestion(questionNumber);
             String answer = Engine.readPlayerInput();
-            if ((isEven(nextNumber) && answer.equals("yes")) || (!isEven(nextNumber)) && answer.equals("no")) {
+            if ((isEven(questionNumber) && answer.equals("yes")) || (!isEven(questionNumber)) && answer.equals("no")) {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer);
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + (isEven(nextNumber) ? "yes" : "no"));
+                System.out.println(printCorrectAnswer(questionNumber));
+                //TODO не разобрался как перевести на рельсы Engine.java
             }
         }
         if (Engine.winCounter >= 3) {
-            System.out.println("Congratulations, " + Engine.playerName + "!");
+            Engine.winningAction();
         }
     }
 
     public static boolean isEven(int input) {
         return (input % 2) == 0;
+    }
+
+    public static String printCorrectAnswer(int input) {
+        return isEven(input) ? "yes" : "no";
     }
 
 }

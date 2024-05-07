@@ -17,22 +17,29 @@ public class Engine {
         return playerName;
     }
 
-    public static void Greeting(String playerName) {
-        System.out.println("Hello, " + playerName + "!");
+    public static void greeting(String inputPlayerName) {
+        System.out.println("Hello, " + inputPlayerName + "!");
     }
-    
+
+    public static void evenGamePrintQuestion(int input) {
+        System.out.println("Question: " + input);
+    }
+
     public static void correctAnswerAction() {
         System.out.println("Correct!");
         winCounter++;
     }
 
     public static void incorrectAnswerAction(String answer) {
-        System.out.println(answer + " is wrong answer ;(. Correct answer was +"); //TODO
+        System.out.print(answer + " is wrong answer ;(. Correct answer was "); //TODO нужно закрыть сканер после поражения
         lose = true;
     }
 
+    public static void winningAction() {
+        System.out.println("Congratulations, " + Engine.playerName + "!"); //TODO нужно закрыть сканер после победы
+    }
+
     public static String readPlayerInput() {
-        System.out.println("Question: "); //TODO
         Scanner playerInput = new Scanner(System.in);
         return playerInput.next();
     }
@@ -44,6 +51,4 @@ public class Engine {
     public static int calculatorGameGenerateRandomNumber() {
         return (int) (Math.random() * Engine.CALCULATORGAME_MAX_NUMBER);
     }
-
-    
 }
