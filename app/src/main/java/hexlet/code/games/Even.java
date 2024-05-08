@@ -12,8 +12,7 @@ public class Even {
             if ((isEven(questionNumber) && answer.equals("yes")) || (!isEven(questionNumber)) && answer.equals("no")) {
                 Engine.correctAnswerAction();
             } else {
-                Engine.incorrectAnswerAction(answer);
-                System.out.println(printCorrectAnswer(questionNumber));
+                Engine.incorrectAnswerAction(answer, printCorrectAnswer(questionNumber));
                 //TODO не разобрался как перевести на рельсы Engine.java
             }
         }
