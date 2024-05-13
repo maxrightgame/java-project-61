@@ -7,6 +7,10 @@ public class Engine {
     public static final int EVENGAME_MAX_NUMBER = 100;
     public static final int CALCULATORGAME_MAX_NUMBER = 15;
     public static final int GCDGAME_MAX_NUMBER = 60;
+    public static final int PROGRESSIONGAME_MIN_NUMBER = 1;
+    public static final int PROGRESSIONGAME_MAX_NUMBER = 100;
+    public static final int PROGRESSIONGAME_MIN_LENGTH = 7;
+    public static final int PROGRESSIONGAME_MAX_LENGTH = 14;
     public static boolean lose = false;
     public static int winCounter = 0;
     public static String playerName;
@@ -22,7 +26,7 @@ public class Engine {
         System.out.println("Hello, " + inputPlayerName + "!");
     }
 
-    public static void evenGamePrintQuestion(int input) {
+    public static void evenGamePrintQuestion(int input) { //TODO Слить принты в один
         System.out.println("Question: " + input);
     }
 
