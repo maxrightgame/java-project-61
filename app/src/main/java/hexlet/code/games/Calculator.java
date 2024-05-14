@@ -3,6 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calculator {
+
+    public static final int MENU_POSITION = 3;
+
     public static void calculatorGame() {
         while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
             int[] expression = generateQuestion();
@@ -11,7 +14,7 @@ public class Calculator {
             System.out.println("Question: " + expression[0] + " " + operand + " " + expression[1]);
             //TODO перенести вывод вопроса в Engine.java
             String answer = Engine.readPlayerInput();
-            //TODO ввод текста вылетит в NumberFormatException
+            //TODO ввод текста вылетит в NumberFormatException, как обработать?
             if (Integer.parseInt(answer) == correctAnswer) {
                 Engine.correctAnswerAction();
             } else {
@@ -19,7 +22,7 @@ public class Calculator {
             }
         }
         if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.winningAction();
+            Engine.printWinningCommends();
         }
     }
 

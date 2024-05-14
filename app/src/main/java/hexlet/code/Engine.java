@@ -13,6 +13,8 @@ public class Engine {
     public static final int PROGRESSIONGAME_MAX_LENGTH = 14;
     public static final int PRIMEGAME_MIN_NUMBER = 1;
     public static final int PRIMEGAME_MAX_NUMBER = 99;
+    public static final int EXIT_POSITION = 0;
+    public static final int GREETING_POSITION = 1;
     public static boolean lose = false;
     public static int winCounter = 0;
     public static String playerName;
@@ -28,7 +30,7 @@ public class Engine {
         System.out.println("Hello, " + inputPlayerName + "!");
     }
 
-    public static void evenGamePrintQuestion(int input) { //TODO Слить принты в один
+    public static void printQuestion(int input) { //TODO Слить принты в один
         System.out.println("Question: " + input);
     }
 
@@ -42,7 +44,7 @@ public class Engine {
         lose = true;
     }
 
-    public static void winningAction() {
+    public static void printWinningCommends() {
         System.out.println("Congratulations, " + Engine.playerName + "!");
     }
 

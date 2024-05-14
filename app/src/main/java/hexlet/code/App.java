@@ -12,30 +12,29 @@ public class App {
     public static void main(String[] args) {
         displayMenu();
         int choice = readInput();
-        //TODO подозреваю числа здесь считаются магическими, пока не понял как поменять
         switch (choice) {
-            case (0):
+            case (Engine.EXIT_POSITION):
                 break;
-            case (1):
-                Engine.greeting(Engine.nameReader());
+            case (Engine.GREETING_POSITION):
+                Engine.greeting(Engine.nameReader()); //TODO неясно как убрать это дублирование
                 break;
-            case (2):
+            case (Even.MENU_POSITION):
                 Engine.greeting(Engine.nameReader());
                 Even.evenGame();
                 break;
-            case (3):
+            case (Calculator.MENU_POSITION):
                 Engine.greeting(Engine.nameReader());
                 Calculator.calculatorGame();
                 break;
-            case (4):
+            case (GCD.MENU_POSITION):
                 Engine.greeting(Engine.nameReader());
                 GCD.gcdGame();
                 break;
-            case (5):
+            case (Progression.MENU_POSITION):
                 Engine.greeting(Engine.nameReader());
                 Progression.progressionGame();
                 break;
-            case (6):
+            case (PrimeNumber.MENU_POSITION):
                 Engine.greeting(Engine.nameReader());
                 PrimeNumber.primeNumberGame();
                 break;
@@ -47,12 +46,12 @@ public class App {
 
     public static void displayMenu() {
         System.out.println("Please enter the action number to start.");
-        System.out.println("1 - Greeting");
-        System.out.println("2 - Even numbers");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
+        System.out.println(Engine.GREETING_POSITION + " - Greeting");
+        System.out.println(Even.MENU_POSITION + " - Even numbers");
+        System.out.println(Calculator.MENU_POSITION + " - Calc");
+        System.out.println(GCD.MENU_POSITION + " - GCD");
+        System.out.println(Progression.MENU_POSITION + " - Progression");
+        System.out.println(PrimeNumber.MENU_POSITION + " - Prime");
         System.out.println("0 - Exit");
     }
 

@@ -3,11 +3,14 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class PrimeNumber {
+
+    public static final int MENU_POSITION = 6;
+
     public static void primeNumberGame() {
         System.out.println("Answer \"yes\" if the number is even, otherwise answer \"no\".");
         while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
             int question = Engine.primeNumberGameGenerateNumber();
-            System.out.println("Question: " + question);
+            Engine.printQuestion(question);
             String answer = Engine.readPlayerInput();
             if (Engine.compareStringAnswer(answer, isPrime(question))) {
                 Engine.correctAnswerAction();
@@ -16,7 +19,7 @@ public class PrimeNumber {
             }
         }
         if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.winningAction();
+            Engine.printWinningCommends();
         }
     }
 

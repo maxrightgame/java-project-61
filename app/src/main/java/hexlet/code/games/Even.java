@@ -4,11 +4,13 @@ import hexlet.code.Engine;
 
 public class Even {
 
+    public static final int MENU_POSITION = 2;
+
     public static void evenGame() {
         System.out.println("Answer \"yes\" if the number is even, otherwise answer \"no\".");
         while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
             int questionNumber = Engine.evenGameGenerateNumber();
-            Engine.evenGamePrintQuestion(questionNumber);
+            Engine.printQuestion(questionNumber);
             String answer = Engine.readPlayerInput();
             if (Engine.compareStringAnswer(answer, isEven(questionNumber))) {
                 Engine.correctAnswerAction();
@@ -18,7 +20,7 @@ public class Even {
             }
         }
         if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.winningAction();
+            Engine.printWinningCommends();
         }
     }
 
