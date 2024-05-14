@@ -10,7 +10,7 @@ public class Even {
             int questionNumber = Engine.evenGameGenerateNumber();
             Engine.evenGamePrintQuestion(questionNumber);
             String answer = Engine.readPlayerInput();
-            if ((isEven(questionNumber) && answer.equals("yes")) || (!isEven(questionNumber)) && answer.equals("no")) {
+            if (Engine.compareStringAnswer(answer, isEven(questionNumber))) {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, printCorrectAnswer(questionNumber));

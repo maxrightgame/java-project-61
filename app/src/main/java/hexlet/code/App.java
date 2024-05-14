@@ -12,6 +12,7 @@ public class App {
     public static void main(String[] args) {
         displayMenu();
         int choice = readInput();
+        //TODO подозреваю числа здесь считаются магическими, пока не понял как поменять
         switch (choice) {
             case (0):
                 break;

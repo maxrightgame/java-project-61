@@ -46,6 +46,10 @@ public class Engine {
         System.out.println("Congratulations, " + Engine.playerName + "!");
     }
 
+    public static boolean compareStringAnswer(String answer, boolean question) {
+        return question && answer.equals("yes") || !question && answer.equals("no");
+    }
+
     public static String readPlayerInput() {
         Scanner playerInput = new Scanner(System.in);
         return playerInput.next();

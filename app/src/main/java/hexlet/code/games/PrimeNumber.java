@@ -9,7 +9,7 @@ public class PrimeNumber {
             int question = Engine.primeNumberGameGenerateNumber();
             System.out.println("Question: " + question);
             String answer = Engine.readPlayerInput();
-            if ((isPrime(question) && answer.equals("yes")) || (!isPrime(question)) && answer.equals("no")) {
+            if (Engine.compareStringAnswer(answer, isPrime(question))) {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, printCorrectAnswer(question));
