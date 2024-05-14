@@ -16,7 +16,6 @@ public class Calculator {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
-                System.out.println(correctAnswer);
             }
         }
         if (Engine.winCounter >= 3) {

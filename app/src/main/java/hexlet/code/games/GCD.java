@@ -22,6 +22,7 @@ public class GCD {
         }
     }
 
+    //TODO слишком часто выпадает простое число (делится на себя и 1)
     public static int[] generateQuestion() {
         int[] expression = new int[2];
         for (int i = 0; i < expression.length; i++) {

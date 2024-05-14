@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         displayMenu();
-        Scanner gameScanner = new Scanner(System.in);
-        int choice = Integer.parseInt(gameScanner.next());
+        int choice = readInput();
         switch (choice) {
             case (0):
                 break;
@@ -48,5 +47,10 @@ public class App {
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
         System.out.println("0 - Exit");
+    }
+
+    public static int readInput() {
+        Scanner gameScanner = new Scanner(System.in);
+        return Integer.parseInt(gameScanner.next());
     }
 }
