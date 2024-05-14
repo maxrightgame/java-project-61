@@ -5,6 +5,7 @@
 ![image](https://github.com/maxrightgame/java-project-61/assets/18327176/3f9d7c59-d874-4836-b305-2a832fd5e8fb)
 ![image](https://github.com/maxrightgame/java-project-61/assets/18327176/6c0ba63f-52f2-4197-a62e-748accf6830f)
 ![image](https://github.com/maxrightgame/java-project-61/assets/18327176/ce5bbd5a-a476-483e-8893-b98fa5b5cb0d)
+![image](https://github.com/maxrightgame/java-project-61/assets/18327176/808c78fb-cc62-45d5-a9d9-0ff4146d8ea5)
 
 
 
