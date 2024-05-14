@@ -17,7 +17,7 @@ public class GCD {
                 Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
             }
         }
-        if (Engine.winCounter >= 3) {
+        if (Engine.winCounter >= Engine.TOTAL_GAMES) {
             Engine.winningAction();
         }
     }
@@ -26,7 +26,7 @@ public class GCD {
     public static int[] generateQuestion() {
         int[] expression = new int[2];
         for (int i = 0; i < expression.length; i++) {
-            expression[i] = Engine.gcdGameGenerateRandomNumber();
+            expression[i] = Engine.gcdGameGenerateNumber();
         }
         return expression;
     }

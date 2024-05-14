@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
 
 import java.util.Scanner;
@@ -33,6 +34,10 @@ public class App {
                 Engine.greeting(Engine.nameReader());
                 Progression.progressionGame();
                 break;
+            case (6):
+                Engine.greeting(Engine.nameReader());
+                PrimeNumber.primeNumberGame();
+                break;
             default:
                 System.out.println("Incorrect input!");
                 break;
@@ -46,6 +51,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
     }
 

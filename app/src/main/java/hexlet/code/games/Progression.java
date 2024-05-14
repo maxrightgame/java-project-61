@@ -23,7 +23,7 @@ public class Progression {
                 Engine.incorrectAnswerAction(answer, String.valueOf(question));
                 System.out.println(question);
             }
-            if (Engine.winCounter >= 3) {
+            if (Engine.winCounter >= Engine.TOTAL_GAMES) {
                 Engine.winningAction();
             }
         }

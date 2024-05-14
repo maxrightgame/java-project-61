@@ -11,6 +11,8 @@ public class Engine {
     public static final int PROGRESSIONGAME_MAX_NUMBER = 100;
     public static final int PROGRESSIONGAME_MIN_LENGTH = 7;
     public static final int PROGRESSIONGAME_MAX_LENGTH = 14;
+    public static final int PRIMEGAME_MIN_NUMBER = 1;
+    public static final int PRIMEGAME_MAX_NUMBER = 99;
     public static boolean lose = false;
     public static int winCounter = 0;
     public static String playerName;
@@ -37,12 +39,11 @@ public class Engine {
 
     public static void incorrectAnswerAction(String answer, String correctAnswer) {
         System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
-        //TODO нужно закрыть сканер после поражения
         lose = true;
     }
 
     public static void winningAction() {
-        System.out.println("Congratulations, " + Engine.playerName + "!"); //TODO нужно закрыть сканер после победы
+        System.out.println("Congratulations, " + Engine.playerName + "!");
     }
 
     public static String readPlayerInput() {
@@ -50,15 +51,21 @@ public class Engine {
         return playerInput.next();
     }
 
-    public static int evenGameGenerateRandomNumber() {
+    public static int evenGameGenerateNumber() {
         return (int) (Math.random() * Engine.EVENGAME_MAX_NUMBER);
     }
 
-    public static int calculatorGameGenerateRandomNumber() {
+    public static int primeNumberGameGenerateNumber() {
+        return (int) (Math.random()
+                * (Engine.PRIMEGAME_MAX_NUMBER - Engine.PRIMEGAME_MIN_NUMBER)
+                + Engine.PRIMEGAME_MIN_NUMBER);
+    }
+
+    public static int calculatorGameGenerateNumber() {
         return (int) (Math.random() * Engine.CALCULATORGAME_MAX_NUMBER);
     }
 
-    public static int gcdGameGenerateRandomNumber() {
+    public static int gcdGameGenerateNumber() {
         return (int) (Math.random() * Engine.GCDGAME_MAX_NUMBER);
     }
 }
