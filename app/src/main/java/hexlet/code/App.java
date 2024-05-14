@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -31,6 +32,7 @@ public class App {
                 break;
             case (5):
                 Engine.greeting(Engine.nameReader());
+                Progression.progressionGame();
                 break;
             default:
                 System.out.println("Incorrect input!");
