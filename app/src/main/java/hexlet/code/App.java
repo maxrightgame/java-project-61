@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         displayMenu();
-        int choice = readInput();
+        int choice = readInput(); //TODO текст вызовет краш
         switch (choice) {
             case (Engine.EXIT_POSITION):
                 break;

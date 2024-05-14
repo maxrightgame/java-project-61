@@ -7,7 +7,7 @@ public class Progression {
     public static final int MENU_POSITION = 5;
 
     public static void progressionGame() {
-        while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
+        while (!Engine.checkWinStatus()) {
             int[] questionArray = new int[generateLength()];
             int questionArrayLength = questionArray.length;
             questionArray[0] = generateQuestion();
@@ -24,10 +24,6 @@ public class Progression {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, String.valueOf(question));
-                System.out.println(question);
-            }
-            if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-                Engine.printWinningCommends();
             }
         }
     }
