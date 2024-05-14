@@ -5,10 +5,11 @@ import hexlet.code.Engine;
 public class Even {
 
     public static final int MENU_POSITION = 2;
+    public static final String RULES = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
     public static void evenGame() {
-        System.out.println("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-        while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
+        Engine.printRules(RULES);
+        while (!Engine.checkWinStatus()) {
             int questionNumber = Engine.evenGameGenerateNumber();
             Engine.printQuestion(questionNumber);
             String answer = Engine.readPlayerInput();
@@ -16,11 +17,7 @@ public class Even {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, printCorrectAnswer(questionNumber));
-                //TODO не разобрался как перевести на рельсы Engine.java
             }
-        }
-        if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.printWinningCommends();
         }
     }
 

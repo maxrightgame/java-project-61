@@ -7,11 +7,11 @@ public class GCD {
     public static final int MENU_POSITION = 4;
 
     public static void gcdGame() {
-        while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
+        while (!Engine.checkWinStatus()) {
             int[] expression = generateQuestion();
             int correctAnswer = calculateGCD(expression[0], expression[1]);
             System.out.println("Question: " + expression[0] + ", " + expression[1]);
-            //TODO перенести вывод вопроса в Engine.java
+            //TODO не понял как сделать универсальный вывод через Engine
             String answer = Engine.readPlayerInput();
             //TODO ввод текста вылетит в NumberFormatException, как обработать?
             if (Integer.parseInt(answer) == correctAnswer) {
@@ -19,9 +19,6 @@ public class GCD {
             } else {
                 Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
             }
-        }
-        if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.printWinningCommends();
         }
     }
 

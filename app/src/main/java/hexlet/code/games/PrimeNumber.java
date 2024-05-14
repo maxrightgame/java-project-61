@@ -5,10 +5,11 @@ import hexlet.code.Engine;
 public class PrimeNumber {
 
     public static final int MENU_POSITION = 6;
+    public static final String RULES = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
     public static void primeNumberGame() {
-        System.out.println("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-        while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
+        Engine.printRules(RULES);
+        while (!Engine.checkWinStatus()) {
             int question = Engine.primeNumberGameGenerateNumber();
             Engine.printQuestion(question);
             String answer = Engine.readPlayerInput();
@@ -17,9 +18,6 @@ public class PrimeNumber {
             } else {
                 Engine.incorrectAnswerAction(answer, printCorrectAnswer(question));
             }
-        }
-        if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.printWinningCommends();
         }
     }
 

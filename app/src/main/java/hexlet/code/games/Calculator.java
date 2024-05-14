@@ -7,12 +7,12 @@ public class Calculator {
     public static final int MENU_POSITION = 3;
 
     public static void calculatorGame() {
-        while (Engine.winCounter < Engine.TOTAL_GAMES && !Engine.lose) {
+        while (!Engine.checkWinStatus()) {
             int[] expression = generateQuestion();
             String operand = operandRandomizer();
             int correctAnswer = calculate(expression, operand);
             System.out.println("Question: " + expression[0] + " " + operand + " " + expression[1]);
-            //TODO перенести вывод вопроса в Engine.java
+            //TODO не понял как сделать универсальный вывод через Engine
             String answer = Engine.readPlayerInput();
             //TODO ввод текста вылетит в NumberFormatException, как обработать?
             if (Integer.parseInt(answer) == correctAnswer) {
@@ -20,9 +20,6 @@ public class Calculator {
             } else {
                 Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
             }
-        }
-        if (Engine.winCounter >= Engine.TOTAL_GAMES) {
-            Engine.printWinningCommends();
         }
     }
 
