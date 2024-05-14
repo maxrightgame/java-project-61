@@ -12,6 +12,7 @@ public class App {
     public static void main(String[] args) {
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
+<<<<<<< HEAD
         if (choice == Engine.EXIT_POSITION) {
         } else if (choice == Engine.GREETING_POSITION) {
             Engine.greeting(Engine.nameReader()); //TODO неясно как убрать это дублирование
@@ -32,6 +33,37 @@ public class App {
             PrimeNumber.primeNumberGame();
         } else {
             System.out.println("Incorrect input!");
+=======
+        switch (choice) {
+            case (Engine.EXIT_POSITION):
+                break;
+            case (Engine.GREETING_POSITION):
+                Engine.greeting(Engine.nameReader()); //TODO неясно как убрать это дублирование
+                break;
+            case (Even.MENU_POSITION):
+                Engine.greeting(Engine.nameReader());
+                Even.evenGame();
+                break;
+            case (Calculator.MENU_POSITION):
+                Engine.greeting(Engine.nameReader());
+                Calculator.calculatorGame();
+                break;
+            case (GCD.MENU_POSITION):
+                Engine.greeting(Engine.nameReader());
+                GCD.gcdGame();
+                break;
+            case (Progression.MENU_POSITION):
+                Engine.greeting(Engine.nameReader());
+                Progression.progressionGame();
+                break;
+            case (PrimeNumber.MENU_POSITION):
+                Engine.greeting(Engine.nameReader());
+                PrimeNumber.primeNumberGame();
+                break;
+            default:
+                System.out.println("Incorrect input!");
+                break;
+>>>>>>> 4276972c7f1930512e6639020a0f3cf3e64da505
         }
     }
 
