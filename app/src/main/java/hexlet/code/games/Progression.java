@@ -5,8 +5,10 @@ import hexlet.code.Engine;
 public class Progression {
 
     public static final int MENU_POSITION = 5;
+    public static final String RULES = "What number is missing in the progression?";
 
     public static void progressionGame() {
+        System.out.println(RULES);
         while (!Engine.checkWinStatus()) {
             int[] questionArray = new int[generateLength()];
             int questionArrayLength = questionArray.length;
