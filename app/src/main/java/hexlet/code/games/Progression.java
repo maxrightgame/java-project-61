@@ -51,6 +51,7 @@ public class Progression {
 
     //TODO перенести логику в Engine?
     public static void printQuestionArray(int[] array, int questionPosition) {
+        System.out.print("Question: ");
         for (int i = 0; i < array.length; i++) {
             if (i == questionPosition) {
                 System.out.print("... ");
