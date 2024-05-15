@@ -13,19 +13,46 @@ public class Engine {
     public static final int PROGRESSIONGAME_MAX_LENGTH = 14;
     public static final int PRIMEGAME_MIN_NUMBER = 1;
     public static final int PRIMEGAME_MAX_NUMBER = 99;
+    public static final int PRIMEGAME_MAX_STEP_NUMBER = 4;
     public static final int EXIT_POSITION = 0;
     public static final int GREETING_POSITION = 1;
-    public static boolean lose = false;
-    public static int winCounter = 0;
-    public static String playerName;
+    private static boolean lose = false;
+    private static int winCounter = 0;
+    private static String playerName;
+
+    public static boolean getLose() {
+        return lose;
+    }
+
+    public static void setLose(boolean input) {
+        lose = input;
+    }
+
+    public static int getWinCounter() {
+        return winCounter;
+    }
+
+    public static void increaseWinCounter() {
+        winCounter += 1;
+    }
+
+    public static String getPlayerName() {
+        return playerName;
+    }
+
+    public static void setPlayerName(String playerName) {
+        Engine.playerName = playerName;
+    }
+
+
 
     public static boolean checkWinStatus() {
-        if (winCounter < TOTAL_GAMES && !lose) {
+        if (getWinCounter() < TOTAL_GAMES && !getLose()) {
             return false;
-        } else if (lose) {
+        } else if (getLose()) {
             return true;
         } else {
-            System.out.println("Congratulations, " + playerName + "!");
+            System.out.println("Congratulations, " + getPlayerName() + "!");
             return true;
         }
     }
@@ -33,8 +60,8 @@ public class Engine {
     public static String nameReader() {
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         Scanner nameScanner = new Scanner(System.in);
-        playerName = nameScanner.next();
-        return playerName;
+        setPlayerName(nameScanner.next());
+        return getPlayerName();
     }
 
     public static void greeting(String inputPlayerName) {
@@ -47,13 +74,13 @@ public class Engine {
 
     public static void correctAnswerAction() {
         System.out.println("Correct!");
-        winCounter++;
+        increaseWinCounter();
     }
 
     public static void incorrectAnswerAction(String answer, String correctAnswer) {
         System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
-        lose = true;
-        System.out.println("Let's try again, " + playerName + "!");
+        setLose(true);
+        System.out.println("Let's try again, " + getPlayerName() + "!");
     }
 
     public static boolean compareStringAnswer(String answer, boolean question) {

@@ -44,7 +44,7 @@ public class Progression {
     }
 
     public static int generateStep() {
-        return (int) (Math.random() * 4) + 1;
+        return (int) (Math.random() * Engine.PRIMEGAME_MAX_STEP_NUMBER) + 1;
     }
 
     public static int selectQuestionPosition(int arrayLength) {

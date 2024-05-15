@@ -13,6 +13,7 @@ public class App {
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
         if (choice == Engine.EXIT_POSITION) {
+            System.exit(0);
         } else if (choice == Engine.GREETING_POSITION) {
             Engine.greeting(Engine.nameReader());
         } else if (choice == Even.MENU_POSITION) {
