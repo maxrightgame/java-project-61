@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class PrimeNumber {
 
     public static final int MENU_POSITION = 6;
-    public static final String RULES = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+    public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void primeNumberGame() {
         Engine.printRules(RULES);
