@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Engine.greeting(Engine.nameReader())
+        Engine.greeting(Engine.nameReader());
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
         if (choice == Engine.EXIT_POSITION) {
