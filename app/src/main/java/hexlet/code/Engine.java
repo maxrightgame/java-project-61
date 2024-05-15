@@ -40,8 +40,8 @@ public class Engine {
         return playerName;
     }
 
-    public static void setPlayerName(String playerName) {
-        Engine.playerName = playerName;
+    public static void setPlayerName(String playerNameInput) {
+        Engine.playerName = playerNameInput;
     }
 
 
