@@ -10,22 +10,25 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        String playerName = Engine.nameReader();
-        Engine.greeting(playerName);
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
         if (choice == Engine.EXIT_POSITION) {
         } else if (choice == Engine.GREETING_POSITION) {
-            Engine.greeting(playerName);
+            Engine.greeting(Engine.nameReader());
         } else if (choice == Even.MENU_POSITION) {
+            Engine.greeting(Engine.nameReader());
             Even.evenGame();
         } else if (choice == Calculator.MENU_POSITION) {
+            Engine.greeting(Engine.nameReader());
             Calculator.calculatorGame();
         } else if (choice == GCD.MENU_POSITION) {
+            Engine.greeting(Engine.nameReader());
             GCD.gcdGame();
         } else if (choice == Progression.MENU_POSITION) {
+            Engine.greeting(Engine.nameReader());
             Progression.progressionGame();
         } else if (choice == PrimeNumber.MENU_POSITION) {
+            Engine.greeting(Engine.nameReader());
             PrimeNumber.primeNumberGame();
         } else {
             System.out.println("Incorrect input!");
