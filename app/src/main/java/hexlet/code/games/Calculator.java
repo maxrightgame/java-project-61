@@ -5,8 +5,10 @@ import hexlet.code.Engine;
 public class Calculator {
 
     public static final int MENU_POSITION = 3;
+    public static final String RULES = "What is the result of the expression?";
 
     public static void calculatorGame() {
+        System.out.println(RULES);
         while (!Engine.checkWinStatus()) {
             int[] expression = generateQuestion();
             String operand = operandRandomizer();
