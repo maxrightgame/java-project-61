@@ -5,8 +5,10 @@ import hexlet.code.Engine;
 public class GCD {
 
     public static final int MENU_POSITION = 4;
+    public static final String RULES = "Find the greatest common divisor of given numbers.";
 
     public static void gcdGame() {
+        System.out.println(RULES);
         while (!Engine.checkWinStatus()) {
             int[] expression = generateQuestion();
             int correctAnswer = calculateGCD(expression[0], expression[1]);
