@@ -10,7 +10,7 @@ public class GCD {
         while (!Engine.checkWinStatus()) {
             int[] expression = generateQuestion();
             int correctAnswer = calculateGCD(expression[0], expression[1]);
-            System.out.println("Question: " + expression[0] + ", " + expression[1]);
+            System.out.println("Question: " + expression[0] + " " + expression[1]);
             //TODO не понял как сделать универсальный вывод через Engine
             String answer = Engine.readPlayerInput();
             //TODO ввод текста вылетит в NumberFormatException, как обработать?
