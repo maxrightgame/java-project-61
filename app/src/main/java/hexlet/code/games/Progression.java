@@ -56,7 +56,7 @@ public class Progression {
         System.out.print("Question: ");
         for (int i = 0; i < array.length; i++) {
             if (i == questionPosition) {
-                System.out.print("... ");
+                System.out.print(".. ");
             } else {
                 System.out.print(array[i] + " ");
             }
