@@ -31,7 +31,7 @@ public class Engine {
     }
 
     public static String nameReader() {
-        System.out.println("Welcome to the Brain Games!\nWhat do I call you?");
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         Scanner nameScanner = new Scanner(System.in);
         playerName = nameScanner.next();
         return playerName;

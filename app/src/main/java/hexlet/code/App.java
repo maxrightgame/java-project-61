@@ -10,12 +10,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Engine.greeting(Engine.nameReader());
+        String playerName = Engine.nameReader();
+        Engine.greeting(playerName);
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
         if (choice == Engine.EXIT_POSITION) {
         } else if (choice == Engine.GREETING_POSITION) {
-            Engine.greeting(Engine.nameReader()); 
+            Engine.greeting(playerName);
         } else if (choice == Even.MENU_POSITION) {
             Even.evenGame();
         } else if (choice == Calculator.MENU_POSITION) {
