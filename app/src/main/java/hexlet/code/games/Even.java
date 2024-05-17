@@ -10,18 +10,21 @@ public class Even {
     public static final int EVENGAME_MIN_NUMBER = 1;
     public static final int EVENGAME_MAX_NUMBER = 100;
 
-    public static void evenGame() {
-        System.out.println(RULES);
-        while (!Engine.checkWinStatus()) {
-            int questionNumber = Utils.generateRandomNumber(EVENGAME_MIN_NUMBER, EVENGAME_MAX_NUMBER);
-            Engine.printQuestion(questionNumber);
-            String answer = Engine.readPlayerInput();
-            if (Engine.compareStringAnswer(answer, isEven(questionNumber))) {
-                Engine.correctAnswerAction();
-            } else {
-                Engine.incorrectAnswerAction(answer, printCorrectAnswer(questionNumber));
-            }
+    /* String[][] = {1, 2, 3},
+                    {no, yes, no}
+    */
+
+
+    public static void startEvenGame() {
+        int gamesTotal = Engine.TOTAL_GAMES;
+        int dataTotal = Engine.TOTAL_GAME_DATA;
+        String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
+        for (int i = 0; i < gamesTotal; i++) {
+            int question = Utils.generateRandomNumber(EVENGAME_MIN_NUMBER, EVENGAME_MAX_NUMBER);
+            questionAnswerArray[i][0] = String.valueOf(question);
+            questionAnswerArray[i][1] = printCorrectAnswer(question);
         }
+        Engine.runGame(RULES, questionAnswerArray);
     }
 
     public static boolean isEven(int input) {
@@ -32,4 +35,7 @@ public class Even {
         return isEven(input) ? "yes" : "no";
     }
 
+    public static boolean compareStringAnswer(String answer, boolean question) {
+        return question && answer.equals("yes") || !question && answer.equals("no");
+    }
 }

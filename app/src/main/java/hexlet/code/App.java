@@ -14,14 +14,14 @@ public class App {
 
     public static void main(String[] args) {
         displayMenu();
-        int choice = readInput(); //TODO текст вызовет краш
+        int choice = Integer.parseInt(Engine.readPlayerInput()); //TODO текст вызовет краш
         if (choice == EXIT_POSITION) {
             System.exit(0);
         } else if (choice == GREETING_POSITION) {
             Engine.greeting(Engine.nameReader());
         } else if (choice == Even.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
-            Even.evenGame();
+            Even.startEvenGame();
         } else if (choice == Calculator.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
             Calculator.calculatorGame();
@@ -38,6 +38,8 @@ public class App {
             System.out.println("Incorrect input!");
         }
     }
+
+
 
     public static void displayMenu() {
         System.out.println("Please enter the action number to start.");

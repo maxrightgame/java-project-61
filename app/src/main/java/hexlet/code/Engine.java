@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int TOTAL_GAMES = 3;
+    public static final int TOTAL_GAME_DATA = 2;
     private static boolean lose = false;
     private static int winCounter = 0;
     private static String playerName;
@@ -30,6 +31,21 @@ public class Engine {
 
     public static void setPlayerName(String playerNameInput) {
         Engine.playerName = playerNameInput;
+    }
+
+    public static void runGame(String rules, String[][] questionAnswer) {
+        System.out.println(rules);
+        int counter = 0;
+        while (!checkWinStatus()) {
+            System.out.println("Question: " + questionAnswer[counter][0]);
+            String answer = readPlayerInput();
+            if (answer.equals(questionAnswer[counter][1])) {
+                correctAnswerAction();
+                counter++;
+            } else {
+                incorrectAnswerAction(answer, questionAnswer[counter][1]);
+            }
+        }
     }
 
     public static boolean checkWinStatus() {
@@ -67,10 +83,6 @@ public class Engine {
         System.out.println(answer + " is wrong answer ;(. Correct answer was " + correctAnswer);
         setLose(true);
         System.out.println("Let's try again, " + getPlayerName() + "!");
-    }
-
-    public static boolean compareStringAnswer(String answer, boolean question) {
-        return question && answer.equals("yes") || !question && answer.equals("no");
     }
 
     public static String readPlayerInput() {

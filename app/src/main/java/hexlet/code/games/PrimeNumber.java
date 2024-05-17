@@ -16,7 +16,7 @@ public class PrimeNumber {
             int question = Utils.generateRandomNumber(PRIMEGAME_MIN_NUMBER, PRIMEGAME_MAX_NUMBER);
             Engine.printQuestion(question);
             String answer = Engine.readPlayerInput();
-            if (Engine.compareStringAnswer(answer, isPrime(question))) {
+            if (Even.compareStringAnswer(answer, isPrime(question))) {
                 Engine.correctAnswerAction();
             } else {
                 Engine.incorrectAnswerAction(answer, printCorrectAnswer(question));
