@@ -1,11 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calculator {
 
     public static final int MENU_POSITION = 3;
     public static final String RULES = "What is the result of the expression?";
+    public static final int CALCULATORGAME_MIN_NUMBER = 1;
+    public static final int CALCULATORGAME_MAX_NUMBER = 15;
 
     public static void calculatorGame() {
         System.out.println(RULES);
@@ -43,7 +46,7 @@ public class Calculator {
     public static int[] generateQuestion() {
         int[] expression = new int[2];
         for (int i = 0; i < expression.length; i++) {
-            expression[i] = Engine.calculatorGameGenerateNumber();
+            expression[i] = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
         }
         return expression;
     }

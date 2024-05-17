@@ -9,12 +9,15 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+    public static final int EXIT_POSITION = 0;
+    public static final int GREETING_POSITION = 1;
+
     public static void main(String[] args) {
         displayMenu();
         int choice = readInput(); //TODO текст вызовет краш
-        if (choice == Engine.EXIT_POSITION) {
+        if (choice == EXIT_POSITION) {
             System.exit(0);
-        } else if (choice == Engine.GREETING_POSITION) {
+        } else if (choice == GREETING_POSITION) {
             Engine.greeting(Engine.nameReader());
         } else if (choice == Even.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
@@ -38,7 +41,7 @@ public class App {
 
     public static void displayMenu() {
         System.out.println("Please enter the action number to start.");
-        System.out.println(Engine.GREETING_POSITION + " - Greeting");
+        System.out.println(GREETING_POSITION + " - Greeting");
         System.out.println(Even.MENU_POSITION + " - Even numbers");
         System.out.println(Calculator.MENU_POSITION + " - Calc");
         System.out.println(GCD.MENU_POSITION + " - GCD");
