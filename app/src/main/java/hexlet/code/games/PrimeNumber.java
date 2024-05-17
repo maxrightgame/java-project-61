@@ -10,18 +10,16 @@ public class PrimeNumber {
     public static final int PRIMEGAME_MIN_NUMBER = 1;
     public static final int PRIMEGAME_MAX_NUMBER = 99;
 
-    public static void primeNumberGame() {
-        Engine.printRules(RULES);
-        while (!Engine.checkWinStatus()) {
+    public static void startPrimeGame() {
+        int gamesTotal = Engine.TOTAL_GAMES;
+        int dataTotal = Engine.TOTAL_GAME_DATA;
+        String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
+        for (int i = 0; i < gamesTotal; i ++) {
             int question = Utils.generateRandomNumber(PRIMEGAME_MIN_NUMBER, PRIMEGAME_MAX_NUMBER);
-            Engine.printQuestion(question);
-            String answer = Engine.readPlayerInput();
-            if (Even.compareStringAnswer(answer, isPrime(question))) {
-                Engine.correctAnswerAction();
-            } else {
-                Engine.incorrectAnswerAction(answer, printCorrectAnswer(question));
-            }
+            questionAnswerArray[i][0] = String.valueOf(question);
+            questionAnswerArray[i][1] = printCorrectAnswer(question);
         }
+        Engine.runGame(RULES, questionAnswerArray);
     }
 
     public static boolean isPrime(int input) {

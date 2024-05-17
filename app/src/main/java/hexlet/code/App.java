@@ -6,8 +6,6 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
 
-import java.util.Scanner;
-
 public class App {
     public static final int EXIT_POSITION = 0;
     public static final int GREETING_POSITION = 1;
@@ -33,7 +31,7 @@ public class App {
             Progression.progressionGame();
         } else if (choice == PrimeNumber.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
-            PrimeNumber.primeNumberGame();
+            PrimeNumber.startPrimeGame();
         } else {
             System.out.println("Incorrect input!");
         }
@@ -50,10 +48,5 @@ public class App {
         System.out.println(Progression.MENU_POSITION + " - Progression");
         System.out.println(PrimeNumber.MENU_POSITION + " - Prime");
         System.out.println("0 - Exit");
-    }
-
-    public static int readInput() {
-        Scanner gameScanner = new Scanner(System.in);
-        return Integer.parseInt(gameScanner.next());
     }
 }
