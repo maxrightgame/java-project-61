@@ -28,7 +28,7 @@ public class App {
             GCD.startGCDGame();
         } else if (choice == Progression.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
-            Progression.progressionGame();
+            Progression.runProgressionGame();
         } else if (choice == PrimeNumber.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
             PrimeNumber.startPrimeGame();
@@ -36,8 +36,6 @@ public class App {
             System.out.println("Incorrect input!");
         }
     }
-
-
 
     public static void displayMenu() {
         System.out.println("Please enter the action number to start.");

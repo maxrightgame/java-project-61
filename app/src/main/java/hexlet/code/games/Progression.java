@@ -14,44 +14,46 @@ public class Progression {
     public static final int PROGRESSIONGAME_MIN_LENGTH = 7;
     public static final int PROGRESSIONGAME_MAX_LENGTH = 14;
 
-    public static void progressionGame() {
-        System.out.println(RULES);
-        while (!Engine.checkWinStatus()) {
-            int length = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_LENGTH, PROGRESSIONGAME_MAX_LENGTH);
-            int[] questionArray = new int[length];
-            int questionArrayLength = questionArray.length;
-            questionArray[0] = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_NUMBER, PROGRESSIONGAME_MAX_NUMBER);
-            int questionStep = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_STEP_NUMBER,
-                    PROGRESSIONGAME_MAX_STEP_NUMBER);
-            for (int i = 1; i < questionArrayLength; i++) {
-                questionArray[i] = questionArray[i - 1] + questionStep;
-            }
-            int questionPosition = selectQuestionPosition(questionArrayLength);
-            int question = questionArray[questionPosition];
-            printQuestionArray(questionArray, questionPosition);
-            String answer = Engine.readPlayerInput();
-            //TODO ввод текста вылетит в NumberFormatException, как обработать?
-            if (Integer.parseInt(answer) == question) {
-                Engine.correctAnswerAction();
-            } else {
-                Engine.incorrectAnswerAction(answer, String.valueOf(question));
-            }
+    public static void runProgressionGame() {
+        int gamesTotal = Engine.TOTAL_GAMES;
+        int dataTotal = Engine.TOTAL_GAME_DATA;
+        String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
+        for (int i = 0; i < gamesTotal; i++) {
+            int[] progression = generateQuestionArray();
+            int secretSpot = selectQuestionPosition(progression);
+            int secretSpotValue = progression[secretSpot];
+            String[] secretProgression = swapSecretSpot(progression, secretSpot);
+            questionAnswerArray[i][0] = String.join(" ", secretProgression);
+            questionAnswerArray[i][1] = String.valueOf(secretSpotValue);
+
         }
+        Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static int selectQuestionPosition(int arrayLength) {
-        return (int) (Math.random() * arrayLength);
+    public static int selectQuestionPosition(int[] array) {
+        return (int) (Math.random() * array.length);
     }
 
-    public static void printQuestionArray(int[] array, int questionPosition) {
-        System.out.print("Question: ");
-        for (int i = 0; i < array.length; i++) {
-            if (i == questionPosition) {
-                System.out.print(".. ");
+    public static int[] generateQuestionArray() {
+        int length = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_LENGTH, PROGRESSIONGAME_MAX_LENGTH);
+        int step = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_STEP_NUMBER, PROGRESSIONGAME_MAX_STEP_NUMBER);
+        int[] array = new int[length];
+        array[0] = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_NUMBER, PROGRESSIONGAME_MAX_NUMBER);
+        for (int i = 1; i < length; i++) {
+            array[i] = array[i - 1] + step;
+        }
+        return array;
+    }
+
+    public static String[] swapSecretSpot(int[] array, int secretSpot) {
+        String[] output = new String[array.length];
+        for (int i = 0; i < output.length; i++) {
+            if (i == secretSpot) {
+                output[i] = "..";
             } else {
-                System.out.print(array[i] + " ");
+                output[i] = String.valueOf(array[i]);
             }
         }
-        System.out.println();
+        return output;
     }
 }

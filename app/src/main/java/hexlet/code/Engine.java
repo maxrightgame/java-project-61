@@ -70,10 +70,6 @@ public class Engine {
         System.out.println("Hello, " + inputPlayerName + "!");
     }
 
-    public static void printQuestion(int input) { //
-        System.out.println("Question: " + input);
-    }
-
     public static void correctAnswerAction() {
         System.out.println("Correct!");
         increaseWinCounter();
@@ -90,7 +86,4 @@ public class Engine {
         return playerInput.next();
     }
 
-    public static void printRules(String rules) {
-        System.out.println(rules);
-    }
 }
