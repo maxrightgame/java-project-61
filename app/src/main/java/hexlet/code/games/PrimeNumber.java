@@ -14,7 +14,7 @@ public class PrimeNumber {
         int gamesTotal = Engine.TOTAL_GAMES;
         int dataTotal = Engine.TOTAL_GAME_DATA;
         String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
-        for (int i = 0; i < gamesTotal; i ++) {
+        for (int i = 0; i < gamesTotal; i++) {
             int question = Utils.generateRandomNumber(PRIMEGAME_MIN_NUMBER, PRIMEGAME_MAX_NUMBER);
             questionAnswerArray[i][0] = String.valueOf(question);
             questionAnswerArray[i][1] = printCorrectAnswer(question);
