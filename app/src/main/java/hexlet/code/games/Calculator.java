@@ -11,21 +11,17 @@ public class Calculator {
     public static final int CALCULATORGAME_MAX_NUMBER = 15;
 
     public static void calculatorGame() {
-        System.out.println(RULES);
-        while (!Engine.checkWinStatus()) {
-            int[] expression = generateQuestion();
+        int gamesTotal = Engine.TOTAL_GAMES;
+        int dataTotal = Engine.TOTAL_GAME_DATA;
+        String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
+        for (int i = 0; i < gamesTotal; i++) {
+            int number1 = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
+            int number2 = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
             String operand = operandRandomizer();
-            int correctAnswer = calculate(expression, operand);
-            System.out.println("Question: " + expression[0] + " " + operand + " " + expression[1]);
-            //TODO не понял как сделать универсальный вывод через Engine
-            String answer = Engine.readPlayerInput();
-            //TODO ввод текста вылетит в NumberFormatException, как обработать?
-            if (Integer.parseInt(answer) == correctAnswer) {
-                Engine.correctAnswerAction();
-            } else {
-                Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
-            }
+            questionAnswerArray[i][0] = number1 + " " + operand + " " + number2;
+            questionAnswerArray[i][1] = String.valueOf(calculate(number1, number2, operand));
         }
+        Engine.runGame(RULES, questionAnswerArray);
     }
 
     public static String operandRandomizer() {
@@ -34,20 +30,12 @@ public class Calculator {
         return operands[random];
     }
 
-    public static int calculate(int[] input, String operand) {
+    public static int calculate(int input1, int input2, String operand) {
         return switch (operand) {
-            case ("+") -> input[0] + input[1];
-            case ("-") -> input[0] - input[1];
-            case ("*") -> input[0] * input[1];
+            case ("+") -> input1 + input2;
+            case ("-") -> input1 - input2;
+            case ("*") -> input1 * input2;
             default -> 0;
         };
-    }
-
-    public static int[] generateQuestion() {
-        int[] expression = new int[2];
-        for (int i = 0; i < expression.length; i++) {
-            expression[i] = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
-        }
-        return expression;
     }
 }
