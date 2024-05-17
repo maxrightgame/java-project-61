@@ -10,7 +10,7 @@ public class Calculator {
     public static final int CALCULATORGAME_MIN_NUMBER = 1;
     public static final int CALCULATORGAME_MAX_NUMBER = 15;
 
-    public static void calculatorGame() {
+    public static void startCalculatorGame() {
         int gamesTotal = Engine.TOTAL_GAMES;
         int dataTotal = Engine.TOTAL_GAME_DATA;
         String[][] questionAnswerArray = new String[gamesTotal][dataTotal];

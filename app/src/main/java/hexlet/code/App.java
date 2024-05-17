@@ -22,10 +22,10 @@ public class App {
             Even.startEvenGame();
         } else if (choice == Calculator.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
-            Calculator.calculatorGame();
+            Calculator.startCalculatorGame();
         } else if (choice == GCD.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
-            GCD.gcdGame();
+            GCD.startGCDGame();
         } else if (choice == Progression.MENU_POSITION) {
             Engine.greeting(Engine.nameReader());
             Progression.progressionGame();

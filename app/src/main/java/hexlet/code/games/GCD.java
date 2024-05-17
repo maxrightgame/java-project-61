@@ -10,30 +10,18 @@ public class GCD {
     public static final int GCDGAME_MIN_NUMBER = 1;
     public static final int GCDGAME_MAX_NUMBER = 60;
 
-    public static void gcdGame() {
-        System.out.println(RULES);
-        while (!Engine.checkWinStatus()) {
-            int[] expression = generateQuestion();
-            int correctAnswer = calculateGCD(expression[0], expression[1]);
-            System.out.println("Question: " + expression[0] + " " + expression[1]);
-            //TODO не понял как сделать универсальный вывод через Engine
-            String answer = Engine.readPlayerInput();
-            //TODO ввод текста вылетит в NumberFormatException, как обработать?
-            if (Integer.parseInt(answer) == correctAnswer) {
-                Engine.correctAnswerAction();
-            } else {
-                Engine.incorrectAnswerAction(answer, String.valueOf(correctAnswer));
-            }
+    public static void startGCDGame() {
+        int gamesTotal = Engine.TOTAL_GAMES;
+        int dataTotal = Engine.TOTAL_GAME_DATA;
+        String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
+        for (int i = 0; i < gamesTotal; i++) {
+            int number1 = Utils.generateRandomNumber(GCDGAME_MIN_NUMBER, GCDGAME_MAX_NUMBER);
+            int number2 = Utils.generateRandomNumber(GCDGAME_MIN_NUMBER, GCDGAME_MAX_NUMBER);
+            String numberCombo = number1 + " " + number2;
+            questionAnswerArray[i][0] = numberCombo;
+            questionAnswerArray[i][1] = String.valueOf(calculateGCD(number1, number2));
         }
-    }
-
-    //TODO слишком часто выпадает простое число (делится на себя и 1)
-    public static int[] generateQuestion() {
-        int[] expression = new int[2];
-        for (int i = 0; i < expression.length; i++) {
-            expression[i] = Utils.generateRandomNumber(GCDGAME_MIN_NUMBER, GCDGAME_MAX_NUMBER);
-        }
-        return expression;
+        Engine.runGame(RULES, questionAnswerArray);
     }
 
     public static int calculateGCD(int input1, int input2) {
@@ -49,6 +37,4 @@ public class GCD {
         }
         return input1;
     }
-
-
 }
