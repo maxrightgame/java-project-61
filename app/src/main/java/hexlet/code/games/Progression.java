@@ -19,7 +19,10 @@ public class Progression {
         int dataTotal = Engine.TOTAL_GAME_DATA;
         String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
         for (int i = 0; i < gamesTotal; i++) {
-            int[] progression = generateQuestionArray();
+            int length = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_LENGTH, PROGRESSIONGAME_MAX_LENGTH);
+            int step = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_STEP_NUMBER, PROGRESSIONGAME_MAX_STEP_NUMBER);
+            int startNumber = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_NUMBER, PROGRESSIONGAME_MAX_NUMBER);
+            int[] progression = generateQuestionArray(length, step, startNumber);
             int secretSpot = (int) (Math.random() * progression.length);
             int secretSpotValue = progression[secretSpot];
             String[] secretProgression = swapSecretSpot(progression, secretSpot);
@@ -30,11 +33,9 @@ public class Progression {
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static int[] generateQuestionArray() {
-        int length = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_LENGTH, PROGRESSIONGAME_MAX_LENGTH);
-        int step = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_STEP_NUMBER, PROGRESSIONGAME_MAX_STEP_NUMBER);
+    public static int[] generateQuestionArray(int length, int step, int startNumber) {
         int[] array = new int[length];
-        array[0] = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_NUMBER, PROGRESSIONGAME_MAX_NUMBER);
+        array[0] = startNumber;
         for (int i = 1; i < length; i++) {
             array[i] = array[i - 1] + step;
         }
