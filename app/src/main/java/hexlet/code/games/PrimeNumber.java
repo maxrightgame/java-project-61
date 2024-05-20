@@ -23,10 +23,10 @@ public class PrimeNumber {
     }
 
     public static boolean isPrime(int input) {
+        if (input <= 1) {
+            return false;
+        }
         for (int i = 2; i < Math.sqrt(input); i++) {
-            if (input == 1 || input == 0) {
-                return false;
-            }
             if (input % i == 0) {
                 return false;
             }
