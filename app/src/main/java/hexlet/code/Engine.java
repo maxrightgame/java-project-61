@@ -31,7 +31,7 @@ public class Engine {
         }
     }
 
-    public static void getPlayerNameAndGreetThem() {
+    public static void getPlayerNameAndGreetThem() { // выведен в метод потому что используется в App
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         Scanner nameScanner = new Scanner(System.in);
         playerName = nameScanner.next();
