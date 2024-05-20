@@ -5,7 +5,6 @@ import hexlet.code.Utils;
 
 public class PrimeNumber {
 
-    public static final int MENU_POSITION = 6;
     public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int PRIMEGAME_MIN_NUMBER = 0;
     public static final int PRIMEGAME_MAX_NUMBER = 99;

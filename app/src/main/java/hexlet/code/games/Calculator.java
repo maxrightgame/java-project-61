@@ -5,7 +5,6 @@ import hexlet.code.Utils;
 
 public class Calculator {
 
-    public static final int MENU_POSITION = 3;
     public static final String RULES = "What is the result of the expression?";
     public static final int CALCULATORGAME_MIN_NUMBER = 1;
     public static final int CALCULATORGAME_MAX_NUMBER = 15;

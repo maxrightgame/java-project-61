@@ -5,7 +5,6 @@ import hexlet.code.Utils;
 
 public class Progression {
 
-    public static final int MENU_POSITION = 5;
     public static final String RULES = "What number is missing in the progression?";
     public static final int PROGRESSIONGAME_MIN_STEP_NUMBER = 1;
     public static final int PROGRESSIONGAME_MAX_STEP_NUMBER = 4;

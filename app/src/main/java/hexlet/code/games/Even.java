@@ -5,7 +5,6 @@ import hexlet.code.Utils;
 
 public class Even {
 
-    public static final int MENU_POSITION = 2;
     public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static final int EVENGAME_MIN_NUMBER = 1;
     public static final int EVENGAME_MAX_NUMBER = 100;
