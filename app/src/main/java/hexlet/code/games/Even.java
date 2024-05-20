@@ -17,16 +17,12 @@ public class Even {
         for (int i = 0; i < gamesTotal; i++) {
             int question = Utils.generateRandomNumber(EVENGAME_MIN_NUMBER, EVENGAME_MAX_NUMBER);
             questionAnswerArray[i][0] = String.valueOf(question);
-            questionAnswerArray[i][1] = printCorrectAnswer(question);
+            questionAnswerArray[i][1] = isEven(question) ? "yes" : "no";
         }
         Engine.runGame(RULES, questionAnswerArray);
     }
 
     public static boolean isEven(int input) {
         return (input % 2) == 0;
-    }
-
-    public static String printCorrectAnswer(int input) {
-        return isEven(input) ? "yes" : "no";
     }
 }

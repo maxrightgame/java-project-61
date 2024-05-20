@@ -13,38 +13,23 @@ public class App {
     public static void main(String[] args) {
         displayMenu();
         int choice = Integer.parseInt(Engine.readPlayerInput()); //TODO текст вызовет краш
-        if (choice == EXIT_POSITION) {
-            System.exit(0);
-        } else if (choice == GREETING_POSITION) {
-            Engine.greeting(Engine.nameReader());
-        } else if (choice == Even.MENU_POSITION) {
-            Engine.greeting(Engine.nameReader());
-            Even.startEvenGame();
-        } else if (choice == Calculator.MENU_POSITION) {
-            Engine.greeting(Engine.nameReader());
-            Calculator.startCalculatorGame();
-        } else if (choice == GCD.MENU_POSITION) {
-            Engine.greeting(Engine.nameReader());
-            GCD.startGCDGame();
-        } else if (choice == Progression.MENU_POSITION) {
-            Engine.greeting(Engine.nameReader());
-            Progression.runProgressionGame();
-        } else if (choice == PrimeNumber.MENU_POSITION) {
-            Engine.greeting(Engine.nameReader());
-            PrimeNumber.startPrimeGame();
-        } else {
-            System.out.println("Incorrect input!");
+        switch (choice) {
+            case EXIT_POSITION -> System.exit(0);
+            case GREETING_POSITION -> Engine.greeting(Engine.nameReader());
+            case Even.MENU_POSITION -> Even.startEvenGame();
+            case Calculator.MENU_POSITION -> Calculator.startCalculatorGame();
+            case GCD.MENU_POSITION -> GCD.startGCDGame();
+            case Progression.MENU_POSITION -> Progression.runProgressionGame();
+            case PrimeNumber.MENU_POSITION -> PrimeNumber.startPrimeGame();
+            default -> System.out.println("Incorrect input!");
         }
     }
 
     public static void displayMenu() {
-        System.out.println("Please enter the action number to start.");
-        System.out.println(GREETING_POSITION + " - Greeting");
-        System.out.println(Even.MENU_POSITION + " - Even numbers");
-        System.out.println(Calculator.MENU_POSITION + " - Calc");
-        System.out.println(GCD.MENU_POSITION + " - GCD");
-        System.out.println(Progression.MENU_POSITION + " - Progression");
-        System.out.println(PrimeNumber.MENU_POSITION + " - Prime");
-        System.out.println("0 - Exit");
+        System.out.print("Please enter the action number to start.\n"
+                + GREETING_POSITION + " - Greeting\n" + Even.MENU_POSITION + " - Even numbers\n"
+                + Calculator.MENU_POSITION + " - Calc\n" + GCD.MENU_POSITION + " - GCD\n"
+                + Progression.MENU_POSITION + " - Progression\n" + PrimeNumber.MENU_POSITION + " - Prime\n"
+                + "0 - Exit\n");
     }
 }

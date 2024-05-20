@@ -34,6 +34,7 @@ public class Engine {
     }
 
     public static void runGame(String rules, String[][] questionAnswer) {
+        greeting(nameReader());
         System.out.println(rules);
         int counter = 0;
         while (!checkWinStatus()) {

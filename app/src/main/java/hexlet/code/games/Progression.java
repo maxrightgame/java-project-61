@@ -20,7 +20,7 @@ public class Progression {
         String[][] questionAnswerArray = new String[gamesTotal][dataTotal];
         for (int i = 0; i < gamesTotal; i++) {
             int[] progression = generateQuestionArray();
-            int secretSpot = selectQuestionPosition(progression);
+            int secretSpot = (int) (Math.random() * progression.length);
             int secretSpotValue = progression[secretSpot];
             String[] secretProgression = swapSecretSpot(progression, secretSpot);
             questionAnswerArray[i][0] = String.join(" ", secretProgression);
@@ -28,10 +28,6 @@ public class Progression {
 
         }
         Engine.runGame(RULES, questionAnswerArray);
-    }
-
-    public static int selectQuestionPosition(int[] array) {
-        return (int) (Math.random() * array.length);
     }
 
     public static int[] generateQuestionArray() {
