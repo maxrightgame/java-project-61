@@ -10,7 +10,7 @@ public class Engine {
     private static String playerName;
 
     public static void runGame(String rules, String[][] questionAnswer) {
-        nameReader();
+        getPlayerNameAndGreetThem();
         System.out.println(rules);
         int counter = 0;
         while (winCounter < TOTAL_GAMES && !lose) {
@@ -31,7 +31,7 @@ public class Engine {
         }
     }
 
-    public static void nameReader() {
+    public static void getPlayerNameAndGreetThem() {
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         Scanner nameScanner = new Scanner(System.in);
         playerName = nameScanner.next();

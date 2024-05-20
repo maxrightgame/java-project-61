@@ -15,7 +15,7 @@ public class App {
         int choice = Integer.parseInt(Engine.readPlayerInput()); //TODO текст вызовет краш
         switch (choice) {
             case EXIT_POSITION -> System.exit(0);
-            case GREETING_POSITION -> Engine.nameReader();
+            case GREETING_POSITION -> Engine.getPlayerNameAndGreetThem();
             case Even.MENU_POSITION -> Even.startEvenGame();
             case Calculator.MENU_POSITION -> Calculator.startCalculatorGame();
             case GCD.MENU_POSITION -> GCD.startGCDGame();

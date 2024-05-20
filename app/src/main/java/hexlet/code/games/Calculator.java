@@ -17,14 +17,14 @@ public class Calculator {
         for (int i = 0; i < gamesTotal; i++) {
             int number1 = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
             int number2 = Utils.generateRandomNumber(CALCULATORGAME_MIN_NUMBER, CALCULATORGAME_MAX_NUMBER);
-            String operand = operandRandomizer();
+            String operand = randomizeOperand();
             questionAnswerArray[i][0] = number1 + " " + operand + " " + number2;
             questionAnswerArray[i][1] = String.valueOf(calculate(number1, number2, operand));
         }
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static String operandRandomizer() {
+    public static String randomizeOperand() {
         String[] operands = new String[]{"+", "-", "*"};
         int random = (int) (Math.random() * operands.length);
         return operands[random];
