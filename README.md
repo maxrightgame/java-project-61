@@ -14,7 +14,10 @@ The "Mind Games" project is a simple terminal application which offers players o
 - **Prime**: Answer if a given number is prime.
 
 ## How to compile 
-TODO
+1. Open app folder
+2. To build application open terminal or command window and type **make build**
+2.1. To remove compiled files type **make clean**
+3. To start the application type **make run-dist**
 
 ## How to play
 
