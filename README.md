@@ -4,12 +4,12 @@
 
 ## "Mind Games" project
 
-"Mind Games" project is a simple terminal application where players are offered one greeting option and five different games. The following commands are available:
+The "Mind Games" project is a simple terminal application which offers players one greeting option and five different games. The following commands are available:
 
 - **Greeting**: Reads player name from input and prints simple greeting.
 - **Even numbers**: Answer if a given number is even.
-- **Calc**: Calculate the result of a given mathemathical expression.
-- **GCD**: Find the greatest common divisor of given numbers.
+- **Calc**: Calculate the result of a given mathematical expression.
+- **GCD**: Find the greatest common divisor (GCD) of two given numbers.
 - **Progression**: Find the missing number in an arithmetic progression.
 - **Prime**: Answer if a given number is prime.
 
@@ -22,9 +22,9 @@ TODO
 2. Follow the provided instructions.
 3. Win!
 
-The application closes when player wins or lose.
+The application closes when the player wins or loses.
 
-To exit the application type "0" in the menu.
+To exit the application, type "0" in the menu.
 
 ## Screenshots of the game
 
