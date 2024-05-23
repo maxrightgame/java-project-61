@@ -22,7 +22,7 @@ public class Progression {
             int step = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_STEP_NUMBER, PROGRESSIONGAME_MAX_STEP_NUMBER);
             int startNumber = Utils.generateRandomNumber(PROGRESSIONGAME_MIN_NUMBER, PROGRESSIONGAME_MAX_NUMBER);
             int[] progression = generateQuestionArray(length, step, startNumber);
-            int secretSpot = Utils.generateRandomNumber(0, progression.length);
+            int secretSpot = Utils.generateRandomNumber(progression.length);
             int secretSpotValue = progression[secretSpot];
             String[] secretProgression = swapSecretSpot(progression, secretSpot);
             questionAnswerArray[i][0] = String.join(" ", secretProgression);

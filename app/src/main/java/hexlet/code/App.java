@@ -6,14 +6,17 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
         displayMenu();
-        String choice = Engine.readPlayerInput();
+        Scanner appInput = new Scanner(System.in);
+        String choice = Engine.readPlayerInput(appInput);
         switch (choice) {
             case "0" -> System.exit(0);
-            case "1" -> Engine.getPlayerNameAndGreetThem();
+            case "1" -> Cli.greetPlayer();
             case "2" -> Even.startEvenGame();
             case "3" -> Calculator.startCalculatorGame();
             case "4" -> GCD.startGCDGame();
