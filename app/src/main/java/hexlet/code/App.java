@@ -26,7 +26,7 @@ public class App {
         }
     }
 
-    public static void displayMenu() {
+    private static void displayMenu() {
         System.out.print("""
                 Please enter the action number to start.
                 1 - Greeting

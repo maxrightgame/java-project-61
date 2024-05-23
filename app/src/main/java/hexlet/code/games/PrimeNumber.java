@@ -21,7 +21,7 @@ public class PrimeNumber {
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static boolean isPrime(int input) {
+    private static boolean isPrime(int input) {
         if (input <= 1) {
             return false;
         }

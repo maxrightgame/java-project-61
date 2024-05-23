@@ -32,7 +32,7 @@ public class Progression {
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static int[] generateQuestionArray(int length, int step, int startNumber) {
+    private static int[] generateQuestionArray(int length, int step, int startNumber) {
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
             array[i] = startNumber + step * i;
@@ -40,7 +40,7 @@ public class Progression {
         return array;
     }
 
-    public static String[] swapSecretSpot(int[] array, int secretSpot) {
+    private static String[] swapSecretSpot(int[] array, int secretSpot) {
         String[] output = new String[array.length];
         for (int i = 0; i < output.length; i++) {
             if (i == secretSpot) {

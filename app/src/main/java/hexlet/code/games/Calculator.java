@@ -24,7 +24,7 @@ public class Calculator {
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static int calculate(int input1, int input2, String operand) {
+    private static int calculate(int input1, int input2, String operand) {
         return switch (operand) {
             case ("+") -> input1 + input2;
             case ("-") -> input1 - input2;

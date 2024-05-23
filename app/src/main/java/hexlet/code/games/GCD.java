@@ -23,7 +23,7 @@ public class GCD {
         Engine.runGame(RULES, questionAnswerArray);
     }
 
-    public static int calculateGCD(int input1, int input2) {
+    private static int calculateGCD(int input1, int input2) {
         if (input1 == 0) {
             return input2;
         }
