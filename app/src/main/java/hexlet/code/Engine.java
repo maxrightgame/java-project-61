@@ -15,7 +15,7 @@ public class Engine {
         int counter = 0;
         for (int i = 0; i < TOTAL_GAMES; i++) {
             System.out.println("Question: " + questionAnswer[counter][0]);
-            String answer = readPlayerInput(playerInput);
+            String answer = playerInput.next();
             if (answer.equals(questionAnswer[counter][1])) {
                 System.out.println("Correct!");
                 counter++;
@@ -26,10 +26,6 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + playerName + "!");
-    }
-
-    public static String readPlayerInput(Scanner scanner) {
-        return scanner.next();
     }
 
 }

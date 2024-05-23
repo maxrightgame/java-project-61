@@ -13,7 +13,7 @@ public class App {
     public static void main(String[] args) {
         displayMenu();
         Scanner appInput = new Scanner(System.in);
-        String choice = Engine.readPlayerInput(appInput);
+        String choice = appInput.next();
         switch (choice) {
             case "0" -> System.exit(0);
             case "1" -> Cli.greetPlayer();
